@@ -13,14 +13,10 @@ import {
 } from "../utils/Contract";
 import { MyContext } from "../landingcomponents/MyContext";
 import { StakeSettingModal } from "./StakeSettingModal";
-// import { useAccount, useDisconnect } from "wagmi";
-// import { useWeb3Modal } from "@web3modal/wagmi/react";
 import Countdown from "react-countdown";
 
 export const EthereumModal = (props) => {
-  // const { open } = useWeb3Modal();
   const { disconnect } = useDisconnect();
-  // const { address, isDisconnected, isConnecting } = useAccount();
   const [stakedAmount, setstakedAmount] = useState(0);
   const [walletBalance, setwalletBalance] = useState(0);
   const [totalStaked, setTotalStaked] = useState(0);
@@ -58,10 +54,6 @@ export const EthereumModal = (props) => {
     AlertContext.setAlert(ret);
     setModalShow(false);
   };
-  // const onModal = async () => {
-  //   onSetModal(true);
-  // };
-
   const onUnstake = async () => {
     let ret = await unstake(address);
     AlertContext.setAlert(ret);
@@ -85,10 +77,6 @@ export const EthereumModal = (props) => {
         stakeValue={stakeValue}
         defaultDay={defaultDay}
       />
-      {/* <p
-        style={{ color: "white" }}
-      >{`${countdown.days} days, ${countdown.hours} hours, ${countdown.minutes} minutes`}</p> */}
-
       <div className="centerModal">
         <div className="btnGroup firstGroup">
           <div className="ethBtn ethBtn1 ethIconBtn">
@@ -172,10 +160,6 @@ export const EthereumModal = (props) => {
             <span className="iSpan">Munity Medals</span>
             <span className="cSpan">{accumulatedPoint}</span>
           </div>
-          {/* <div className=" ethBtn2 ethBtn3">
-            <span className="iSpan">Reward Balance</span>
-            <span className="cSpan">---</span>
-          </div> */}
         </div>
         <div className="btnGroup amountGroup">
           <div className="wSpan">Enter Stake Amount</div>
