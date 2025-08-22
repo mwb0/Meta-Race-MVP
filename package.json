@@ -39,7 +39,8 @@
   "scripts": {
     "predeploy": "concurrently \"set NODE_NO_WARNINGS=1 && node server/server.js\" \"npm run build\"",
     "deploy": "concurrently \"set NODE_NO_WARNINGS=1 && node server/server.js\" \"gh-pages -d build\"",
-    "start": "set NODE_OPTIONS=--no-deprecation && set ESLINT_NO_DEV_ERRORS=true && concurrently \"node server/server.js\" \"react-scripts start\"",
+    "start": "npm run start:internal --silent",
+    "start:internal": "set NODE_OPTIONS=--no-deprecation && set DISABLE_ESLINT_PLUGIN=true && set SKIP_PREFLIGHT_CHECK=true && concurrently \"node server/server.js\" \"react-scripts start\"",
     "build": "concurrently \"set NODE_NO_WARNINGS=1 && node server/server.js\" \"set GENERATE_SOURCEMAP=false && react-scripts build\"",
     "test": "concurrently \"set NODE_NO_WARNINGS=1 && node server/server.js\" \"react-scripts test\"",
     "eject": "concurrently \"set NODE_NO_WARNINGS=1 && node server/server.js\" \"react-scripts eject\""

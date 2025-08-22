@@ -24,6 +24,6 @@ Join the community and dive into a world of endless possibilities.
 - Prerequirements:<br/>
   Node v20.x.x, Google Chrome
 - Installing Dependecies:<br/>
-  npm install --legacy-peer-deps
+  npm install 
 -  Running project:<br/>
   npm start
