@@ -115,7 +115,7 @@ export const Wallnetbtn = () => {
           className="tabButton colortabBtn"
           onClick={connectMetaMask}
         >
-          Connect MetaMask
+          Connect Wallet
         </Button>
       ) : (
         <Button
@@ -125,7 +125,7 @@ export const Wallnetbtn = () => {
             window.open("https://metamask.io/download.html", "_blank")
           }
         >
-          Install MetaMask
+          Connect Wallet
         </Button>
       )}
       {error && <div className="wc-error">{error}</div>}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { toast } from "react-toastify";
 import Slide1 from "../images/Slide-1.jpg";
 import Slide2 from "../images/Slide-2.jpg";
 import Slide3 from "../images/Slide-3.jpg";
@@ -142,7 +143,7 @@ export const Slide = () => {
                   do eiusmod tempor incididunt ut labore et dolore mmpor inc
                 </div>
                 <div className="fixBottom">
-                  <div className="fixBtn">PLAY NOW</div>
+                  <div className="fixBtn" onClick={()=>toast.error("Your wallet is not connected. Please connect your wallet.")}>PLAY NOW</div>
                 </div>
               </div>
             </div>

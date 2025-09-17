@@ -31,7 +31,6 @@
     "react-countdown": "^2.3.5",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.0",
-    "react-scripts": "^5.0.1",
     "react-toastify": "^11.0.5",
     "request": "^2.88.2",
     "sqlite3": "^5.1.7",
@@ -39,13 +38,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "concurrently \"set NODE_NO_WARNINGS=1 && node server/server.js\" \"npm run build\"",
-    "deploy": "concurrently \"set NODE_NO_WARNINGS=1 && node server/server.js\" \"gh-pages -d build\"",
-    "start": "npm run start:internal --silent",
-    "start:internal": "set NODE_OPTIONS=--no-deprecation && set DISABLE_ESLINT_PLUGIN=true && set SKIP_PREFLIGHT_CHECK=true && concurrently \"node server/server.js\" \"react-scripts start\"",
-    "build": "concurrently \"set NODE_NO_WARNINGS=1 && node server/server.js\" \"set GENERATE_SOURCEMAP=false && react-scripts build\"",
-    "test": "concurrently \"set NODE_NO_WARNINGS=1 && node server/server.js\" \"react-scripts test\"",
-    "eject": "concurrently \"set NODE_NO_WARNINGS=1 && node server/server.js\" \"react-scripts eject\""
+    "dev": "concurrently \"node server/server.js\" \"vite\"",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "npm run dev"
   },
   "eslintConfig": {
     "extends": [
@@ -64,5 +60,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.4",
+    "vite": "^7.1.9"
   }
 }

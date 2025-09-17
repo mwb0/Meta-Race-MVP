@@ -1,7 +1,7 @@
 import { Header } from "./Header";
 import { Content } from "./Content";
 import { Footer } from "./Footer";
-import { IphoneContent } from "../iphonecomponents/IphoneContent.js";
+import { IphoneContent } from "../iphonecomponents/IphoneContent";
 export const LandingPage = () => {
   return (
     <div className="LandingPage">
